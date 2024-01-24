@@ -63,13 +63,6 @@ jobs:
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:base2
           cache-from: type=gha
           cache-to: type=gha,mode=max
-      - uses: rishabhgupta/split-by@v1
-        id: split
-        with:
-          string: ${{ steps.builder.outputs.imageid }}
-          split-by: ':'
-      - name: Tag base
-        run: docker tag "${{ steps.split.outputs._1 }}" "${{ env.IMAGE_NAME }}:base2"
         
       - name: Build and push Docker image
         id: build-and-push
