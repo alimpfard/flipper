@@ -69,7 +69,7 @@ jobs:
           string: ${{ steps.builder.outputs.imageid }}
           split-by: ':'
       - name: Tag base
-        run: docker tag "${{ steps.split.outputs._2 }}" "${{ env.IMAGE_NAME }}:base2"
+        run: docker tag "${{ steps.split.outputs._1 }}" "${{ env.IMAGE_NAME }}:base2"
         
       - name: Build and push Docker image
         id: build-and-push
