@@ -60,7 +60,7 @@ jobs:
           context: .
           file: dockerfiles/builder.base
           push: ${{ github.event_name != 'pull_request' }}
-          tags: builder:base2
+          tags: ${{ env.IMAGE_NAME }}:base2
           cache-from: type=gha
           cache-to: type=gha,mode=max
           
