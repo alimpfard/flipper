@@ -17,6 +17,8 @@ RUN mkdir -p $PACKAGE_DIR $BUILD_DIR $TARGET_DIR
 ENV CC=/usr/bin/gcc
 ENV CXX=/usr/bin/g++
 
+RUN echo -e "deb http://old-releases.ubuntu.com/ubuntu/ groovy main restricted universe multiverse\ndeb http://old-releases.ubuntu.com/ubuntu/ groovy-updates main restricted universe multiverse\ndeb http://old-releases.ubuntu.com/ubuntu/ groovy-security main restricted universe multiverse\ndeb http://old-releases.ubuntu.com/ubuntu/ groovy-backports main restricted universe multiverse" > /etc/apt/sources.list
+
 # добавляем репозитории и ставим нужные пакеты
 RUN apt-get update && apt-get -y  install \
     git \
