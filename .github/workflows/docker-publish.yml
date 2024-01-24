@@ -63,9 +63,6 @@ jobs:
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:base2
           cache-from: type=gha
           cache-to: type=gha,mode=max
-
-      - name: Tag base
-        run: docker tag "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:base2" "${{ env.IMAGE_NAME }}:base2"
           
       - name: Build and push Docker image
         id: build-and-push
