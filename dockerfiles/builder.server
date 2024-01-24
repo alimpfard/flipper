@@ -1,5 +1,5 @@
 # syntax = docker/dockerfile:1.0-experimental
-FROM builder:base2 AS server_build
+FROM alimpfard/flipper:base2 AS server_build
 SHELL ["bash", "-l", "-c"]
 
 ARG THREAD_COUNT=12
